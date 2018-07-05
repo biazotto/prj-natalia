@@ -29,7 +29,7 @@ const Cabecalho = props => {
               <li><Link to='/servicos'>Serviços</Link></li>
               <li><Link to='/portfolio'>Portfolio</Link></li>
               <li><Link to='/precos'>Preços</Link></li>
-              <li><Link to='/contato'>Contato Modificado</Link></li>
+              <li><Link to='/contato'>Contato</Link></li>
             </ul>
           </div>
         </div>
