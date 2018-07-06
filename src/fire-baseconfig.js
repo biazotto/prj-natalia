@@ -3,12 +3,13 @@ const firebase = require('firebase')
 
 
 const Firebaseconfig = {
-  apiKey: "AIzaSyBcjsIk8seSWQgph0lcVit95oiVGOxC8gk",
-  authDomain: "nataliabuenoportfolio.firebaseapp.com",
-  databaseURL: "https://nataliabuenoportfolio.firebaseio.com",
-  projectId: "nataliabuenoportfolio",
-  storageBucket: "nataliabuenoportfolio.appspot.com",
-  messagingSenderId: "1009632585086"
+  apiKey: "AIzaSyCzAwUeOHTbV86QJu_CtgY_CkZpequ5Tyk",
+  authDomain: "prj-natalia1.firebaseapp.com",
+  databaseURL: "https://prj-natalia1.firebaseio.com",
+  projectId: "prj-natalia1",
+  storageBucket: "prj-natalia1.appspot.com",
+  messagingSenderId: "727686893387"
+  
 }
 
 const app = firebase.initializeApp(Firebaseconfig)
