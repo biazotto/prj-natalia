@@ -13,7 +13,21 @@ class AdminPortfolio extends Component {
     gravaPortfolio(e) {
         console.log('vamos gravar esse portfolio')
         console.log(this.titulo.value)
+        console.log(this.descricao.value)
+        console.log(this.imagem.value)
 
+        const arquivo = this.imagem.files[0]
+        const {name, size, type} = arquivo
+        console.log(arquivo)
+
+        const ref = storage.ref(name)
+        ref.put(arquivo)
+        .then(img => {
+            img.ref.getDownloadURL()
+                .then(downloadURL => {
+                console.log(downloadURL)
+                })
+        })
 
         e.preventDefault()
     }
