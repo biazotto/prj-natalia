@@ -7,7 +7,7 @@ import Cabecalho from './componentes/cabecalho'
 import Inicio from './componentes/inicio'
 import Servicos from './componentes/servicos'
 import Portfolio from './componentes/portfolio'
-import Precos from './componentes/precos'
+import Teste from './componentes/Teste'
 import Contato from './componentes/contato'
 // Painel admin
 import Admin from './admin/admin'
@@ -23,9 +23,10 @@ class App extends Component {
           <Route path='/' exact component = {Portfolio}/>
           <Route path='/servicos' component = {Servicos}/>
           <Route path='/portfolio' component = {Portfolio}/>
-          <Route path='/precos' component = {Precos}/>
+          <Route path='/teste' component = {Teste}/>
           <Route path='/contato' component ={Contato}/>
           <Route path='/admin' component = {Admin}/>
+
 
 
           <Rodape />
