@@ -12,6 +12,7 @@ import Contato from './componentes/contato'
 import Projeto from './admin/Projeto'
 // Painel admin
 import Admin from './admin/admin'
+import Login from './admin/login';
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
           
           <Route path='/admin' component = {Admin}/>
           <Route path='/Projeto' component = {Projeto}/>
+          <Route path='/login' component = {Login}/>
 
 
 

@@ -11,21 +11,24 @@ class AdminPortfolio extends Component {
     }
 
     gravaPortfolio(e) {
-        console.log('vamos gravar esse portfolio')
-        console.log(this.titulo.value)
-        console.log(this.descricao.value)
-        console.log(this.imagem.value)
-
         const arquivo = this.imagem.files[0]
         const {name, size, type} = arquivo
-        console.log(arquivo)
+      
 
         const ref = storage.ref(name)
         ref.put(arquivo)
         .then(img => {
             img.ref.getDownloadURL()
                 .then(downloadURL => {
-                console.log(downloadURL)
+                                const novoPortfolio = {
+                    titulo: this.titulo.value,
+                    descricao: this.descricao.value,
+                    imagem: downloadURL
+                }
+                console.log(novoPortfolio)
+                config.push('portfolio', {
+                    data: novoPortfolio
+                    })
                 })
         })
 
@@ -34,7 +37,7 @@ class AdminPortfolio extends Component {
 
     render() {
         return (
-            <div style={{ padding: '120px' }}>
+            <div className='container'>
                 <h2> AdminPortfolio </h2>
                 <form onSubmit={this.gravaPortfolio} >
                     <div className="form-group">

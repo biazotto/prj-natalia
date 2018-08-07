@@ -32,7 +32,7 @@ class Portfolio extends Component {
                                 return <ItemPortfolio key={key} conteudo={this.state.portfolio[key]} />
                             })
                         }
-                        <p>{JSON.stringify(Object.keys(this.state.portfolio))}</p> 
+                        
 
                     </div>
                 </div>
