@@ -9,7 +9,7 @@ class Login extends Component {
 
         this.state = {
             estaAutenticado: false,
-            estaLogando: true,
+            estaLogando: false,
             erro: false
 
         }
