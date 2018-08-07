@@ -42,7 +42,7 @@ class Login extends Component {
         if (this.state.estaLogando) {
             return (
                 <div className='container'>
-                <p>Aguarde...</p>
+                <p className="glyphicon glyphicon-refresh">Aguarde...</p>
                 </div>
             )}
         return (
