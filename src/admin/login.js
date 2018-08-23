@@ -9,7 +9,7 @@ class Login extends Component {
 
         this.state = {
             estaAutenticado: false,
-            estaLogando: true,
+            estaLogando: false,
             erro: false
 
         }
@@ -42,6 +42,7 @@ class Login extends Component {
         if (this.state.estaLogando) {
             return (
                 <div className='container'>
+                <i className="fa fa-refresh fa-spin" style="font-size:24px"></i>
                 <p>Aguarde...</p>
                 </div>
             )}

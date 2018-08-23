@@ -4,15 +4,7 @@ import { Link } from 'react-router-dom'
 const Cabecalho = props => {
   return (
     <div>
-      <div className='jumbotron text-center'>
-       
-        
-        <h1>Natalia Bueno</h1>
-        
-        <p>Architect Student</p>
 
-
-      </div>
      <nav className='navbar navbar-default navbar-fixed-top'>
         <div className='container'>
           <div className='navbar-header'>
@@ -26,7 +18,6 @@ const Cabecalho = props => {
           <div className='collapse navbar-collapse' id='myNavbar'>
             <ul className='nav navbar-nav navbar-right'>
               <li><Link to='/'>Inicio</Link></li>
-              
               <li><Link to='/portfolio'>Portfolio</Link></li>
               <li><Link to='/teste'>Teste</Link></li>
               <li><Link to='/contato'>Contato</Link></li>
