@@ -36,7 +36,6 @@ class Login extends Component {
     render() {
 
         if (this.state.estaAutenticado) {
-
             return <Redirect to='/admin' />
         }
         if (this.state.estaLogando) {
