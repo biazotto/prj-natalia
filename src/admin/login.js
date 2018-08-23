@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import { auth } from './../fire-baseconfig'
 
@@ -34,17 +34,18 @@ class Login extends Component {
     }
 
     render() {
-        
-        if(this.state.estaAutenticado){
-            
+
+        if (this.state.estaAutenticado) {
+
             return <Redirect to='/admin' />
         }
         if (this.state.estaLogando) {
             return (
                 <div className='container'>
-                <p className="glyphicon glyphicon-refresh">Aguarde...</p>
-                </div>
-            )}
+            <p className="glyphicon glyphicon-refresh">Aguarde...</p>
+                </div >
+            )
+        }
         return (
             <div className='container'>
 

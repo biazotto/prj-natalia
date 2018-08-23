@@ -6,36 +6,56 @@ class AdminPortfolio extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            estaGravando: false,
+        }
 
         this.gravaPortfolio = this.gravaPortfolio.bind(this)
     }
 
     gravaPortfolio(e) {
+        const itemPortfolio = {
+            titulo: this.titulo.value,
+            descricao: this.descricao.value,
+            
+        }
+        this.setState({ estaGravando: true })
         const arquivo = this.imagem.files[0]
-        const {name, size, type} = arquivo
-      
+        const { name, size, type } = arquivo
+
 
         const ref = storage.ref(name)
         ref.put(arquivo)
-        .then(img => {
-            img.ref.getDownloadURL()
-                .then(downloadURL => {
-                                const novoPortfolio = {
-                    titulo: this.titulo.value,
-                    descricao: this.descricao.value,
-                    imagem: downloadURL
-                }
-                console.log(novoPortfolio)
-                config.push('portfolio', {
-                    data: novoPortfolio
+            .then(img => {
+                img.ref.getDownloadURL()
+                    .then(downloadURL => {
+                        const novoPortfolio = {
+                            titulo: itemPortfolio.titulo,
+                            descricao: itemPortfolio.descricao,
+                            imagem: downloadURL
+                        }
+                        console.log(novoPortfolio)
+                        config.push('portfolio', {
+                            data: novoPortfolio
+                        })
+
+                        { alert("Item Salvo") }
+                        this.setState({ estaGravando: false })
                     })
-                })
-        })
+            })
 
         e.preventDefault()
     }
 
     render() {
+        if (this.state.estaGravando) {
+            return (
+                <div className='container'>
+
+                    <p>Salvando este lindo projeto...</p>
+                </div>
+            )
+        }
         return (
             <div className='container'>
                 <h2> AdminPortfolio </h2>
@@ -52,6 +72,7 @@ class AdminPortfolio extends Component {
                     <div className="form-group">
                         <label htmlFor="imagem">Selecione a Imagem</label>
                         <input type="file" className="form-control-file" id="imagem" ref={(ref) => this.imagem = ref} />
+
                     </div>
                     <button type="submit" className="btn btn-primary">Salvar</button>
                 </form>

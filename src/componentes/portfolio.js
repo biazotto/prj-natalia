@@ -24,17 +24,18 @@ class Portfolio extends Component {
             <div>
                 <div id='portfolio' className='container-fluid text-center bg-grey'>
                     <h2>Portfolio</h2>
-                    <h4>What I have created</h4>
+                    <h4>Meus Projetos</h4>
                     <div className='row-text-center'>
                         {
                             Object.keys(this.state.portfolio)
-                            .map(key =>{
-                                return <ItemPortfolio key={key} conteudo={this.state.portfolio[key]} />
-                            })
+                                .map(key => {
+                                    return <ItemPortfolio key={key} conteudo={this.state.portfolio[key]} />
+                                    
+                                })
                         }
-                        
-
+                           
                     </div>
+                    <p>{JSON.stringify(Object.keys(this.state.portfolio))}</p>
                 </div>
             </div >
         )
