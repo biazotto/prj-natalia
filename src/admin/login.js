@@ -48,23 +48,26 @@ class Login extends Component {
             )
         }
         return (
-            <div className='container'>
+            <div>
                 <SemFoto />
-                <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input type="email" name='email' ref={ref => this.email = ref} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                <div className='container'>
+
+                    <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input type="email" name='email' ref={ref => this.email = ref} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
 
 
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" name='senha' ref={ref => this.senha = ref} className="form-control" id="exampleInputPassword1" />
-                    {this.state.erro && <small id="emailHelp" className="form-text text-muted">Login ou Senha Errado</small>}
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input type="password" name='senha' ref={ref => this.senha = ref} className="form-control" id="exampleInputPassword1" />
+                        {this.state.erro && <small id="emailHelp" className="form-text text-muted">Login ou Senha Errado</small>}
+                    </div>
+
+                    <button type="button" className="btn btn-primary" onClick={this.autenticaUsuario}>Submit</button>
+
                 </div>
-
-                <button type="button" className="btn btn-primary" onClick={this.autenticaUsuario}>Submit</button>
-
-            </div>
-        )
-    }
-}
-
+                </div>
+                )
+            }
+        }
+        
 export default Login

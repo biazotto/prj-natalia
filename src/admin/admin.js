@@ -31,9 +31,12 @@ class Admin extends Component {
     render() {
         if (this.state.estaLogando) {
             return (
-                <div className='container'>
+                <div>
                 <SemFoto/>
+                <div className='container'>
+                
                  <p className="glyphicon glyphicon-refresh">Aguarde...</p>
+                </div>
                 </div>
             )
         }
@@ -50,6 +53,7 @@ class Admin extends Component {
                 <Route path={`${this.props.match.url}/portfolio`} component={AdminPortfolio} />
 
             </div>
+            
         )
     }
 }
