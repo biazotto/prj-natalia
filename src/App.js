@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Cabecalho />
+          
 
           <Route path='/' exact component={Foto} />
           <Route path='/' exact component={Inicio} />
