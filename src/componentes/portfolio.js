@@ -29,13 +29,17 @@ class Portfolio extends Component {
                         {
                             Object.keys(this.state.portfolio)
                                 .map(key => {
-                                    return <ItemPortfolio key={key} conteudo={this.state.portfolio[key]} />
-                                    
+                                    return (
+                                        <div>
+                                            <p>{key}</p>
+                                            <ItemPortfolio key={key} conteudo={this.state.portfolio[key]} />
+                                        </div>
+                                    )
                                 })
                         }
-                           
+
                     </div>
-                    <p>{JSON.stringify(Object.keys(this.state.portfolio))}</p>
+
                 </div>
             </div >
         )

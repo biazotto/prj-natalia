@@ -39,7 +39,7 @@ class AdminPortfolio extends Component {
                             data: novoPortfolio
                         })
 
-                        { alert("Item Salvo") }
+                        { alert("Projeto salvo com sucesso!") }
                         this.setState({ estaGravando: false })
                     })
             })
@@ -51,8 +51,7 @@ class AdminPortfolio extends Component {
         if (this.state.estaGravando) {
             return (
                 <div className='container'>
-
-                    <p>Salvando este lindo projeto...</p>
+                    <p>Salvando...</p>
                 </div>
             )
         }

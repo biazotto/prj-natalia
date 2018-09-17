@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
 
 import Rodape from './componentes/Rodape'
@@ -15,40 +15,40 @@ import semFoto from './componentes/semFoto'
 // Painel admin
 import Admin from './admin/admin'
 import Login from './admin/login';
+import NoMatch from './componentes/NoMatch';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
-          <Cabecalho />
-
-          <Route path='/' exact component={Foto} />
-          <Route path='/' exact component={Inicio} />
-          <Route path='/' exact component={About} />
-
-          <Route path='/portfolio' component={semFoto} />
-          <Route path='/portfolio' component={Portfolio} />
-
-          <Route path='/teste' component={semFoto} />
-          <Route path='/teste' component={Teste} />
-
-          <Route path='/contato' component={semFoto} />
-          <Route path='/contato' component={Contato} />
-
-          <Route path='/admin' component={semFoto} />
-          <Route path='/admin' component={Admin} />
+        <div>
           
-          <Route path='/projeto' component={semFoto} />
-          <Route path='/projeto' component={Projeto} />
+            <Cabecalho />
+            <Route path='/' exact component={Foto} />
+            <Route path='/' exact component={Inicio} />
+            <Route path='/' exact component={About} />
 
-          <Route path='/login' component={semFoto} />
-          <Route path='/login' component={Login} />
+            <Route path='/portfolio' component={semFoto} />
+            <Route path='/portfolio' component={Portfolio} />
 
+            <Route path='/teste' component={semFoto} />
+            <Route path='/teste' component={Teste} />
 
+            <Route path='/contato' component={semFoto} />
+            <Route path='/contato' component={Contato} />
 
-          <Rodape />
+            <Route path='/admin' component={semFoto} />
+            <Route path='/admin' component={Admin} />
 
+            <Route path='/projeto' component={semFoto} />
+            <Route path='/projeto' component={Projeto} />
+
+            <Route path='/login' component={semFoto} />
+            <Route path='/login' component={Login} />
+
+            <Route path='*' component={NoMatch} />
+            <Rodape />
+         
         </div>
       </BrowserRouter>
     );
