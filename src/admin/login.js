@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
 import { auth } from './../fire-baseconfig'
+import SemFoto from '../componentes/semFoto';
 
 class Login extends Component {
     constructor(props) {
@@ -41,18 +42,19 @@ class Login extends Component {
         if (this.state.estaLogando) {
             return (
                 <div className='container'>
-            <p className="glyphicon glyphicon-refresh">Aguarde...</p>
+                    <SemFoto />
+                    <p className="glyphicon glyphicon-refresh">Aguarde...</p>
                 </div >
             )
         }
         return (
             <div className='container'>
-
+                <SemFoto />
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
                     <input type="email" name='email' ref={ref => this.email = ref} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
 
-               
+
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" name='senha' ref={ref => this.senha = ref} className="form-control" id="exampleInputPassword1" />
                     {this.state.erro && <small id="emailHelp" className="form-text text-muted">Login ou Senha Errado</small>}

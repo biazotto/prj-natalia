@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from './../fire-baseconfig'
 import ItemPortfolio from './itemPortfolio';
+import SemFoto from './semFoto';
 
 class Portfolio extends Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class Portfolio extends Component {
     render() {
         return (
             <div>
+                <SemFoto />
                 <div id='portfolio' className='container-fluid text-center bg-grey'>
                     <h2>Portfolio</h2>
                     <h4>Meus Projetos</h4>

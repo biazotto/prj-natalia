@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react';
+import Foto from './Foto'
+import About from './about'
 
-const Inicio = props => {
+class Inicio extends Component {
+    render(){
     return (
-        <div className='container'>
+        <div>
             
+            <Foto />
+            <About />
+
 
         </div>
-    )
+    );
+}
 }
 
 export default Inicio

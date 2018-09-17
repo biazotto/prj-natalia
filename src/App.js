@@ -21,49 +21,27 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-<<<<<<< HEAD
         <div className="App">
-          
-
-          <Route path='/' exact component={Foto} />
+          <Cabecalho />
+          <Switch>
           <Route path='/' exact component={Inicio} />
-          <Route path='/' exact component={About} />
 
-          <Route path='/portfolio' component={semFoto} />
           <Route path='/portfolio' component={Portfolio} />
 
-          <Route path='/teste' component={semFoto} />
           <Route path='/teste' component={Teste} />
-=======
-        <div>
-          
-            <Cabecalho />
-            <Route path='/' exact component={Foto} />
-            <Route path='/' exact component={Inicio} />
-            <Route path='/' exact component={About} />
->>>>>>> master
 
-            <Route path='/portfolio' component={semFoto} />
-            <Route path='/portfolio' component={Portfolio} />
+          <Route path='/contato' component={Contato} />
 
-            <Route path='/teste' component={semFoto} />
-            <Route path='/teste' component={Teste} />
+          <Route path='/admin' component={Admin} />
 
-            <Route path='/contato' component={semFoto} />
-            <Route path='/contato' component={Contato} />
+          <Route path='/projeto' component={Projeto} />
 
-            <Route path='/admin' component={semFoto} />
-            <Route path='/admin' component={Admin} />
+          <Route path='/login' component={Login} />
 
-            <Route path='/projeto' component={semFoto} />
-            <Route path='/projeto' component={Projeto} />
+          <Route path='*' component={NoMatch} />
+          </Switch>
+          <Rodape />
 
-            <Route path='/login' component={semFoto} />
-            <Route path='/login' component={Login} />
-
-            <Route path='*' component={NoMatch} />
-            <Rodape />
-         
         </div>
       </BrowserRouter>
     );
