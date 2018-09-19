@@ -4,6 +4,7 @@ import { auth } from './../fire-baseconfig'
 import AdminMenu from './AdminMenu'
 import AdminPortfolio from './AdminPortfolio'
 import SemFoto from '../componentes/semFoto';
+import FotoPerfil from './fotoPerfil';
 
 
 class Admin extends Component {
@@ -51,6 +52,7 @@ class Admin extends Component {
                 <h2> Painel Admin </h2>
                 <Route path={'/'} component={AdminMenu} />
                 <Route path={`${this.props.match.url}/portfolio`} component={AdminPortfolio} />
+                <Route path={`${this.props.match.url}/alterarfoto`} component={FotoPerfil} />
 
             </div>
             

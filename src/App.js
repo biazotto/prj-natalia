@@ -10,8 +10,7 @@ import Portfolio from './componentes/portfolio'
 import Teste from './componentes/Teste'
 import Contato from './componentes/contato'
 import Projeto from './componentes/Projeto'
-import Foto from './componentes/Foto'
-import semFoto from './componentes/semFoto'
+
 // Painel admin
 import Admin from './admin/admin'
 import Login from './admin/login';
@@ -34,7 +33,7 @@ class App extends Component {
 
           <Route path='/admin' component={Admin} />
 
-          <Route path='/projeto' component={Projeto} />
+          <Route path='/projeto/:id' exact component={Projeto} />
 
           <Route path='/login' component={Login} />
 

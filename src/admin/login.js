@@ -65,9 +65,9 @@ class Login extends Component {
                     <button type="button" className="btn btn-primary" onClick={this.autenticaUsuario}>Submit</button>
 
                 </div>
-                </div>
-                )
-            }
-        }
-        
+            </div>
+        )
+    }
+}
+
 export default Login

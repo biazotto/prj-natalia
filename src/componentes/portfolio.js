@@ -3,6 +3,7 @@ import config from './../fire-baseconfig'
 import ItemPortfolio from './itemPortfolio';
 import SemFoto from './semFoto';
 
+
 class Portfolio extends Component {
     constructor(props) {
         super(props)
@@ -34,7 +35,7 @@ class Portfolio extends Component {
                                     return (
                                         <div>
                                             <p>{key}</p>
-                                            <ItemPortfolio key={key} conteudo={this.state.portfolio[key]} />
+                                            <ItemPortfolio key={key} id={key} conteudo={this.state.portfolio[key]} />
                                         </div>
                                     )
                                 })
