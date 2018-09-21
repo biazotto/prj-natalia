@@ -70,7 +70,7 @@ class AdminPortfolio extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="imagem">Selecione a Imagem</label>
-                        <input type="file" className="form-control-file" id="imagem" ref={(ref) => this.imagem = ref} />
+                        <input  multiple="true" type="file" className="form-control-file" id="imagem" ref={(ref) => this.imagem = ref} />
 
                     </div>
                     <button type="submit" className="btn btn-primary">Salvar</button>

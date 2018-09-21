@@ -34,7 +34,7 @@ render() {
             <div className="col-sm-12">
                 <div className='thumbnail'>
                     <div className="well" align='center'>
-                        <p>{this.state.portfolio.descricao}</p>
+                        <p>{this.state.portfolio}</p>
                     </div>
                 </div>
             </div>

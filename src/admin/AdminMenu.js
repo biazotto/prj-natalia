@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Admin = props => {
     return (
-        <div className="col-md-6 offset-md-3">
+        <div className="container">
             <div className="list-group">
                 <a href="#" className="list-group-item list-group-item-action active">
                     Selecione uma opção </a>
