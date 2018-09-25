@@ -29,6 +29,10 @@ class Admin extends Component {
         })
     }
 
+    deslogar(){
+        auth.signOut()
+    }
+
     render() {
         if (this.state.estaLogando) {
             return (
@@ -47,13 +51,15 @@ class Admin extends Component {
             )
         }
         return (
-            <div>
+           
+           <div>
                 <SemFoto/>
                 <h2> Painel Admin </h2>
+               
                 <Route path={'/'} component={AdminMenu} />
                 <Route path={`${this.props.match.url}/portfolio`} component={AdminPortfolio} />
                 <Route path={`${this.props.match.url}/alterarfoto`} component={FotoPerfil} />
-
+                
             </div>
             
         )
