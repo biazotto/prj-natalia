@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
-
 import Rodape from './componentes/Rodape'
 import Cabecalho from './componentes/cabecalho'
 import Inicio from './componentes/inicio'
@@ -15,6 +14,8 @@ import Projeto from './componentes/Projeto'
 import Admin from './admin/admin'
 import Login from './admin/login';
 import NoMatch from './componentes/NoMatch';
+
+
 
 class App extends Component {
   render() {
