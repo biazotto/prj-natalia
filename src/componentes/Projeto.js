@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SemFoto from './semFoto'
 import axios from 'axios'
-import cors from 'cors'
 
 class Projeto extends Component {
     constructor(props) {

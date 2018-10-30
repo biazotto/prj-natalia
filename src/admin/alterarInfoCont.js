@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import config, { storage } from '../fire-baseconfig';
 
 
-class alterarAbout extends Component {
+class alterarInfoCont extends Component {
     constructor(props) {
         super(props)
 
@@ -13,7 +13,7 @@ class alterarAbout extends Component {
         this.gravaAbout = this.gravaAbout.bind(this)
     }
 
-    gravaAbout(e) {
+    gravaInfoCont(e) {
 
         this.setState({ estaGravando: true })
         const texto = this.about.value
@@ -40,12 +40,20 @@ class alterarAbout extends Component {
         return (
 
             <div className='container'>
-                <h2> Alterar About </h2>
-                <form onSubmit={this.gravaAbout}>
+                <h2> Alterar Informações de contato </h2>
+                <form onSubmit={this.gravaInfoCont}>
 
-                    <label htmlFor="about">Digite seu novo Sobre Mim</label>
+                    <label htmlFor="about">Telefone</label>
                     <br />
-                    <textarea type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <input type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <br />
+                    <label htmlFor="about">Email</label>
+                    <br />
+                    <input type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <br />
+                    <label htmlFor="about">Endereço</label>
+                    <br />
+                    <input type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
                     <br />
                     <button type="submit" className="btn btn-primary">Salvar</button>
                 </form>
@@ -56,5 +64,5 @@ class alterarAbout extends Component {
 }
 
 
-export default alterarAbout
+export default alterarInfoCont
 

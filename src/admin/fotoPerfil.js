@@ -21,7 +21,7 @@ class fotoPerfil extends Component {
         console.log(arquivo)
 
 
-        const ref = storage.ref(name)
+        const ref = storage.ref('Perfil/about' )
         ref.put(arquivo).then(img => {
             img.ref.getDownloadURL()
                 .then(downloadURL => {
@@ -29,7 +29,7 @@ class fotoPerfil extends Component {
                         imagem: downloadURL
                     }
                     console.log(novaImagem)
-                    config.update('fotoPerfil', {
+                    config.update('Perfil', {
                         data: novaImagem
                     })
 

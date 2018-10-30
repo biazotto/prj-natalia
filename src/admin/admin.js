@@ -5,6 +5,9 @@ import AdminMenu from './AdminMenu'
 import AdminPortfolio from './AdminPortfolio'
 import SemFoto from '../componentes/semFoto';
 import FotoPerfil from './fotoPerfil';
+import alterarAbout from './alterarAbout'
+import alterarInfoCont from './alterarInfoCont'
+
 
 
 class Admin extends Component {
@@ -29,7 +32,7 @@ class Admin extends Component {
         })
     }
 
-    deslogar(){
+    deslogar() {
         auth.signOut()
     }
 
@@ -37,31 +40,33 @@ class Admin extends Component {
         if (this.state.estaLogando) {
             return (
                 <div>
-                <SemFoto/>
-                <div className='container'>
-                
-                 <p className="glyphicon glyphicon-refresh">Aguarde...</p>
-                </div>
+                    <SemFoto />
+                    <div className='container'>
+
+                        <p className="glyphicon glyphicon-refresh">Aguarde...</p>
+                    </div>
                 </div>
             )
         }
-        if(!this.state.estaAutenticado){
-            return(
-                <Redirect to='/login'/>
+        if (!this.state.estaAutenticado) {
+            return (
+                <Redirect to='/login' />
             )
         }
         return (
-           
-           <div>
-                <SemFoto/>
+
+            <div>
+                <SemFoto />
                 <h2> Painel Admin </h2>
-               
+
                 <Route path={'/'} component={AdminMenu} />
                 <Route path={`${this.props.match.url}/portfolio`} component={AdminPortfolio} />
                 <Route path={`${this.props.match.url}/alterarfoto`} component={FotoPerfil} />
-                
+                <Route path={`${this.props.match.url}/alterarAbout`} component={alterarAbout} />
+                <Route path={`${this.props.match.url}/altinfocont`} component={alterarInfoCont} />
+
             </div>
-            
+
         )
     }
 }

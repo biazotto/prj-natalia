@@ -6,14 +6,14 @@ class Foto extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            fotoPerfil: {
+            Perfil: {
 
             }
         }
 
-        config.syncState('fotoPerfil', {
+        config.syncState('Perfil', {
             context: this,
-            state: 'fotoPerfil',
+            state: 'Perfil',
             asArray: false
         }
         )
@@ -24,7 +24,7 @@ class Foto extends Component {
             <div>
                 <div className='jumbotron text-center'>
                     <h1>Natalia Bueno</h1>
-                    <img src={this.state.fotoPerfil.imagem} className='img-rounded' alt='Natalia Bueno' height='380' width='350' />
+                    <img src={this.state.Perfil.imagem} className='img-rounded' alt='Natalia Bueno' height='380' width='350' />
                     <p>Architect Student</p>
                 </div>
             </div>

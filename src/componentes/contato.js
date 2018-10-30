@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
-import SemFoto from './semFoto'
+import config from './../fire-baseconfig'
 
 class Contato extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            Perfil: {
+
+            }
+        }
+
+        config.syncState('Perfil', {
+            context: this,
+            state: 'Perfil',
+            asArray: false
+        }
+        )
+
+    }
+
+
     render() {
         return (
             <div>
-                <SemFoto />
                 <div id='contact' className='container-fluid bg-grey'>
-                    <h2 className='text-center'>CONTACT</h2>
+                    <h2 className='text-center'>Contato</h2>
                     <div className='row'>
                         <div className='col-sm-5'>
-                            <p>Contact us and we'll get back to you within 24 hours.</p>
-                            <p><span className='glyphicon glyphicon-map-marker'></span> Campinas, SP</p>
-                            <p><span className='glyphicon glyphicon-phone'></span> +5519 9999-9999</p>
-                            <p><span className='glyphicon glyphicon-envelope'></span> teste@something.com</p>
+                            <p>Entre em contato</p>
+                            <p><span className='glyphicon glyphicon-map-marker'></span> {this.state.Perfil.cidade}</p>
+                            <p><span className='glyphicon glyphicon-phone'></span> {this.state.Perfil.telefone}</p>
+                            <p><span className='glyphicon glyphicon-envelope'></span> {this.state.Perfil.email}</p>
                         </div>
                         <div className='col-sm-7 '>
                             <div className='row'>
