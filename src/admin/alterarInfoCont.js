@@ -10,7 +10,7 @@ class alterarInfoCont extends Component {
             estaGravando: false,
         }
 
-        this.gravaAbout = this.gravaAbout.bind(this)
+        this.gravaInfoCont = this.gravaInfoCont.bind(this)
     }
 
     gravaInfoCont(e) {
