@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SemFoto from './semFoto'
 import axios from 'axios'
+import config from './../fire-baseconfig'
 
 class Projeto extends Component {
     constructor(props) {
@@ -9,6 +10,14 @@ class Projeto extends Component {
             projeto: {}
         }
         this.buscaProjeto(this.props.match.params.id)
+
+        config.syncState('Perfil', {
+            context: this,
+            state: 'Perfil',
+            asArray: false
+        }
+        )
+
     }
     buscaProjeto(id) {
         axios
@@ -18,6 +27,7 @@ class Projeto extends Component {
             })
             .catch(e => console.log('erro'))
     }
+    
 
 render() {
     const { id } = this.props.match.params
@@ -33,7 +43,7 @@ render() {
             <div className="col-sm-12">
                 <div className='thumbnail'>
                     <div className="well" align='center'>
-                        <p>{this.state.portfolio}</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

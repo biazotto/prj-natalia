@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from './../fire-baseconfig'
+import Foto from './Foto'
 
 class Contato extends Component {
     constructor(props) {
@@ -22,7 +23,9 @@ class Contato extends Component {
 
     render() {
         return (
+            
             <div>
+               
                 <div id='contact' className='container-fluid bg-grey'>
                     <h2 className='text-center'>Contato</h2>
                     <div className='row'>

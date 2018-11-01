@@ -51,14 +51,16 @@ class AdminMenu extends Component {
         return (
 
             <div className="container">
+            
                 <div className="list-group">
                     <a href="#" className="list-group-item list-group-item-action active">
                         Selecione uma opção </a>
                     <li><Link to='/admin/portfolio'>Novo Projeto</Link></li>
+                    <li><Link to='/admin/excluirProjeto'>Excluir Projeto</Link></li>
                     <li><Link to='/admin/alterarfoto'>Alterar Foto</Link></li>
                     <li><Link to='/admin/alterarabout'>Alterar About</Link></li>
                     <li><Link to='/admin/altinfocont'>Alterar Informações de contato</Link></li>
-
+                    
                 </div>
                 <button onClick={this.deslogar} type="button" className="btn btn-primary">Logout</button>
             </div>

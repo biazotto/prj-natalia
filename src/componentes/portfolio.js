@@ -33,8 +33,7 @@ class Portfolio extends Component {
                             Object.keys(this.state.portfolio)
                                 .map(key => {
                                     return (
-                                        <div>
-                                            <p>{key}</p>
+                                        <div >
                                             <ItemPortfolio key={key} id={key} conteudo={this.state.portfolio[key]} />
                                         </div>
                                     )

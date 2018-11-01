@@ -7,6 +7,7 @@ import SemFoto from '../componentes/semFoto';
 import FotoPerfil from './fotoPerfil';
 import alterarAbout from './alterarAbout'
 import alterarInfoCont from './alterarInfoCont'
+import excluirProjeto from './excluirProjeto'
 
 
 
@@ -57,13 +58,12 @@ class Admin extends Component {
 
             <div>
                 <SemFoto />
-                <h2> Painel Admin </h2>
-
-                <Route path={'/'} component={AdminMenu} />
+                <Route path={'/'}  component={AdminMenu} />
                 <Route path={`${this.props.match.url}/portfolio`} component={AdminPortfolio} />
                 <Route path={`${this.props.match.url}/alterarfoto`} component={FotoPerfil} />
                 <Route path={`${this.props.match.url}/alterarAbout`} component={alterarAbout} />
                 <Route path={`${this.props.match.url}/altinfocont`} component={alterarInfoCont} />
+                <Route path={`${this.props.match.url}/excluirProjeto`} component={excluirProjeto} />
 
             </div>
 
