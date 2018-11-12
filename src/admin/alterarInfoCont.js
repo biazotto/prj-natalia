@@ -14,16 +14,24 @@ class alterarInfoCont extends Component {
     }
 
     gravaInfoCont(e) {
-
         this.setState({ estaGravando: true })
-        const texto = this.about.value
-        console.log(texto)
+        
+        const novaInfoContato = {
+            telefone: this.telefone.value,
+            email: this.email.value,
+            cidade: this.endereco.value
+        }
+        config.update('Perfil',{
+            data: novaInfoContato
+        })
 
-    
+
         { alert("About alterado com sucesso!") }
         this.setState({ estaGravando: false })
 
 
+            
+   
         e.preventDefault()
     }
 
@@ -43,17 +51,17 @@ class alterarInfoCont extends Component {
                 <h2> Alterar Informações de contato </h2>
                 <form onSubmit={this.gravaInfoCont}>
 
-                    <label htmlFor="about">Telefone</label>
+                    <label htmlFor="telefone">Telefone</label>
                     <br />
-                    <input type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <input type= 'text' className="form-control" id="telefone" ref={(ref) => this.telefone = ref} rows="4" />
                     <br />
-                    <label htmlFor="about">Email</label>
+                    <label htmlFor="email">Email</label>
                     <br />
-                    <input type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <input type= 'text' className="form-control" id="email" ref={(ref) => this.email = ref} rows="4" />
                     <br />
-                    <label htmlFor="about">Endereço</label>
+                    <label htmlFor="endereco">Endereço</label>
                     <br />
-                    <input type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <input type= 'text' className="form-control" id="endereco" ref={(ref) => this.endereco = ref} rows="4" />
                     <br />
                     <button type="submit" className="btn btn-primary">Salvar</button>
                 </form>

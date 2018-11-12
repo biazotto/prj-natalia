@@ -19,11 +19,20 @@ class alterarAbout extends Component {
         const texto = this.about.value
         console.log(texto)
 
-    
+        const novoAbout = {
+            about: texto
+        }
+        config.update('Perfil',{
+            data: novoAbout
+        })
+
+
         { alert("About alterado com sucesso!") }
         this.setState({ estaGravando: false })
 
 
+            
+   
         e.preventDefault()
     }
 
@@ -45,7 +54,7 @@ class alterarAbout extends Component {
 
                     <label htmlFor="about">Digite seu novo Sobre Mim</label>
                     <br />
-                    <textarea type= 'text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
+                    <textarea type='text' className="form-control" id="about" ref={(ref) => this.about = ref} rows="4" />
                     <br />
                     <button type="submit" className="btn btn-primary">Salvar</button>
                 </form>

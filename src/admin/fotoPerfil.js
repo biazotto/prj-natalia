@@ -17,11 +17,11 @@ class fotoPerfil extends Component {
 
         this.setState({ estaGravando: true })
         const arquivo = this.imagem.files[0]
-        const { name, size, type } = arquivo
+        const { name } = arquivo
         console.log(arquivo)
 
 
-        const ref = storage.ref('Perfil/about' )
+        const ref = storage.ref(name)
         ref.put(arquivo).then(img => {
             img.ref.getDownloadURL()
                 .then(downloadURL => {
