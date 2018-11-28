@@ -1,62 +1,75 @@
 import React, { Component } from 'react';
-import config, { storage } from '../fire-baseconfig';
+import config from './../fire-baseconfig'
+import { Redirect } from 'react-router-dom'
 
-
-class excluirProjeto extends Component {
+class Contato extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            estaGravando: false,
+            Perfil: {
+
+            },
+            enviandoEmail: false
         }
 
-        this.excluirProjeto = this.excluirProjeto.bind(this)
+        config.syncState('Perfil', {
+            context: this,
+            state: 'Perfil',
+            asArray: false
+        }
+        )
+
     }
-
-    excluirProjeto(e) {
-
-        { alert("Projeto(s) excluído(s)") }
-        this.setState({ estaGravando: false })
-
-
+    resetForm(e){
+        this.setState({this.state.enviandoEmail: true})
+        alert('Email enviado com sucesso')
         e.preventDefault()
-    }
-
-
+    } 
 
     render() {
-        if (this.state.estaGravando) {
+        if (this.state.enviandoEmail) {
             return (
-                <div className='container'>
-                    <p>Salvando...</p>
-                </div>
+                <Redirect to='/' />
             )
         }
         return (
 
-            <div className='container'>
-                <h2> Excluir Projeto </h2>
-                <form onSubmit={this.excluirProjeto}>
+            <div>
 
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Projeto 1</label>
-                        <br />
-                        <input type="checkbox" className="custom-control-input" id="customCheck2" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Projeto 2</label>
-                        < br/>
-                        <input type="checkbox" className="custom-control-input" id="customCheck3" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Projeto 3</label>
-                        <br />
+                <div id='contact' className='container-fluid bg-grey'>
+                    <h2 className='text-center'>Contato</h2>
+                    <div className='row'>
+                        <div className='col-sm-5'>
+                            <p>Entre em contato</p>
+                            <p><span className='glyphicon glyphicon-map-marker'></span> {this.state.Perfil.cidade}</p>
+                            <p><span className='glyphicon glyphicon-phone'></span> {this.state.Perfil.telefone}</p>
+                            <p><span className='glyphicon glyphicon-envelope'></span> {this.state.Perfil.email}</p>
+                        </div>
+                        <div className='col-sm-7 '>
+                            <div className='row'>
+                                <form action="https://us-central1-prj-natalia1.cloudfunctions.net/enviarEmail" method="post">
+                                    <div className='row'>
+                                        <div className='col-sm-6 form-group'>
+                                            <input className='form-control' id='assunto' name='assunto' placeholder='Nome/Empresa' type='text' required />
+                                        </div>
+                                        <div className='col-sm-6 form-group'>
+                                            <input className='form-control' id='remetente' name='remetente' placeholder='Email Para Contato' type='email' required />
+                                        </div>
+                                    </div>
+                                    <textarea className='form-control' id='corpo' name='corpo' placeholder='Digite seu texto aqui' rows='5'></textarea><br />
+                                    <div className='row'>
+                                        <div className='col-sm-12 form-group'>
+                                            <button className='btn btn-default pull-right' type='submit'>Send</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Excluir Projetos</button>
-                </form>
+                </div>
             </div>
-
         )
     }
 }
 
-
-export default excluirProjeto
-
+export default Contato
