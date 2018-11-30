@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from './../fire-baseconfig'
-import Foto from './Foto'
+import { Redirect } from 'react-router-dom'
+
 
 class Contato extends Component {
     constructor(props) {
@@ -23,9 +24,9 @@ class Contato extends Component {
 
     render() {
         return (
-            
+
             <div>
-               
+
                 <div id='contact' className='container-fluid bg-grey'>
                     <h2 className='text-center'>Contato</h2>
                     <div className='row'>
@@ -37,18 +38,22 @@ class Contato extends Component {
                         </div>
                         <div className='col-sm-7 '>
                             <div className='row'>
-                                <div className='col-sm-6 form-group'>
-                                    <input className='form-control' id='name' name='name' placeholder='Name' type='text' required />
-                                </div>
-                                <div className='col-sm-6 form-group'>
-                                    <input className='form-control' id='email' name='email' placeholder='Email' type='email' required />
-                                </div>
-                            </div>
-                            <textarea className='form-control' id='comments' name='comments' placeholder='Comment' rows='5'></textarea><br />
-                            <div className='row'>
-                                <div className='col-sm-12 form-group'>
-                                    <button className='btn btn-default pull-right' type='submit'>Send</button>
-                                </div>
+                                <form action="https://us-central1-prj-natalia1.cloudfunctions.net/enviarEmail" method="post">
+                                    <div className='row'>
+                                        <div className='col-sm-6 form-group'>
+                                            <input className='form-control' id='assunto' name='assunto' placeholder='Nome/Empresa' type='text' required />
+                                        </div>
+                                        <div className='col-sm-6 form-group'>
+                                            <input className='form-control' id='remetente' name='remetente' placeholder='Email Para Contato' type='email' required />
+                                        </div>
+                                    </div>
+                                    <textarea className='form-control' id='corpo' name='corpo' placeholder='Digite seu texto aqui' rows='5'></textarea><br />
+                                    <div className='row'>
+                                        <div className='col-sm-12 form-group'>
+                                            <button className='btn btn-default pull-right' type='submit'>Send</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

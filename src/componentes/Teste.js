@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from './../fire-baseconfig'
 import { Redirect } from 'react-router-dom'
 
+
 class Contato extends Component {
     constructor(props) {
         super(props)
@@ -20,11 +21,7 @@ class Contato extends Component {
         )
 
     }
-    resetForm(e){
-        this.setState({this.state.enviandoEmail: true})
-        alert('Email enviado com sucesso')
-        e.preventDefault()
-    } 
+
 
     render() {
         if (this.state.enviandoEmail) {
