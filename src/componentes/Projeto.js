@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import SemFoto from './semFoto'
-import axios from 'axios'
 import config from './../fire-baseconfig'
+
+
 
 class Projeto extends Component {
     constructor(props) {
@@ -9,48 +10,37 @@ class Projeto extends Component {
         this.state = {
             projeto: {}
         }
-        this.buscaProjeto(this.props.match.params.id)
 
-        config.syncState('Perfil', {
+        const { id } = this.props.match.params
+
+        config.syncState('portfolio/' + id, {
             context: this,
-            state: 'Perfil',
+            state: 'projeto',
             asArray: false
         }
         )
-
     }
-    buscaProjeto(id) {
-        axios
-            .get(`https://prj-natalia1.firebaseio.com/portfolio/${id}`)
-            .then(resultado => {
-                this.setState({ projeto: resultado.data })
-            })
-            .catch(e => console.log('erro'))
-    }
-    
 
-render() {
-    const { id } = this.props.match.params
+    render() {
 
-
-    return (
-        <div>
-            <SemFoto />
-            <div className='container'>
-                <p>{id}</p>
-
-            </div>
-            <div className="col-sm-12">
-                <div className='thumbnail'>
-                    <div className="well" align='center'>
-                        <p></p>
-                    </div>
+        return (
+            <div>
+                <SemFoto />
+                <div className='container' align='center'>
+                    <h1>{this.state.projeto.titulo}</h1>
+                    <br />
+                    <img src={this.state.projeto.imagem} alt='img' ></img>
                 </div>
-            </div>
-        </div>
+                <br />
+                <div className="well" align='center'>
+                    <p>{this.state.projeto.descricao}</p>
+                </div>
 
-    )
-}
+            </div>
+
+
+        )
+    }
 }
 
 export default Projeto
