@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import config, { storage } from '../fire-baseconfig';
+import config from '../fire-baseconfig';
 
 
 class alterarAbout extends Component {
@@ -27,7 +27,7 @@ class alterarAbout extends Component {
         })
 
 
-        { alert("About alterado com sucesso!") }
+         alert("About alterado com sucesso!") 
         this.setState({ estaGravando: false })
 
 

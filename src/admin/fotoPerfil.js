@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import config, { storage } from '../fire-baseconfig';
+import config, { storage } from '../fire-baseconfig'
 
 
 class fotoPerfil extends Component {
@@ -33,7 +33,7 @@ class fotoPerfil extends Component {
                         data: novaImagem
                     })
 
-                    { alert("Foto salva com sucesso!") }
+                     alert("Foto salva com sucesso!") 
                     this.setState({ estaGravando: false })
                 })
         })

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import config from './../fire-baseconfig'
-import { Redirect } from 'react-router-dom'
-
+import config from '../fire-baseconfig'
 
 class Contato extends Component {
     constructor(props) {

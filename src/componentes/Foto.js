@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import config from './../fire-baseconfig'
+import config from '../fire-baseconfig'
 
 
 class Foto extends Component {

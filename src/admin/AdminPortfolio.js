@@ -21,7 +21,7 @@ class AdminPortfolio extends Component {
         }
         this.setState({ estaGravando: true })
         const arquivo = this.imagem.files[0]
-        const { name, size, type } = arquivo
+        const { name } = arquivo
 
 
         const ref = storage.ref(name)
@@ -39,7 +39,7 @@ class AdminPortfolio extends Component {
                             data: novoPortfolio
                         })
 
-                        { alert("Projeto salvo com sucesso!") }
+                         alert("Projeto salvo com sucesso!") 
                         this.setState({ estaGravando: false })
                     })
             })

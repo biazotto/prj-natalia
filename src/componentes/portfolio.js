@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import config from './../fire-baseconfig'
+import config from '../fire-baseconfig'
 import ItemPortfolio from './itemPortfolio';
 import SemFoto from './semFoto';
 

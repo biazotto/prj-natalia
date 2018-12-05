@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import SemFoto from './semFoto'
-import config from './../fire-baseconfig'
+import React, { Component } from 'react'
+import config from '../fire-baseconfig'
+import SemFoto from './semFoto';
 
 
 
@@ -11,21 +11,25 @@ class Projeto extends Component {
             projeto: {}
         }
 
+             
+        
+    }
+    componentDidMount() {
         const { id } = this.props.match.params
-
-        config.syncState('portfolio/' + id, {
+        config.syncState(`portfolio/${id}`, {
             context: this,
             state: 'projeto',
             asArray: false
         }
         )
-    }
+      }
 
     render() {
-
+        
         return (
             <div>
                 <SemFoto />
+
                 <div className='container' align='center'>
                     <h1>{this.state.projeto.titulo}</h1>
                     <br />

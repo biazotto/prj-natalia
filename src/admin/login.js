@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import { auth } from './../fire-baseconfig'
+import { auth } from '../fire-baseconfig'
 import SemFoto from '../componentes/semFoto';
 
 class Login extends Component {

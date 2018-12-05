@@ -4,7 +4,6 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Rodape from './componentes/Rodape'
 import Cabecalho from './componentes/cabecalho'
 import Inicio from './componentes/inicio'
-import About from './componentes/about'
 import Portfolio from './componentes/portfolio'
 import Teste from './componentes/Teste'
 import Contato from './componentes/contato'

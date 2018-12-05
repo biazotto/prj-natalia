@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import config, { storage } from '../fire-baseconfig';
+import config from '../fire-baseconfig';
+import ItemExclusao from './itemExclusao';
 
 
 class excluirProjeto extends Component {
@@ -8,17 +9,29 @@ class excluirProjeto extends Component {
 
         this.state = {
             estaGravando: false,
+            portfolio: {}
         }
 
         this.excluirProjeto = this.excluirProjeto.bind(this)
+
+        config.syncState('portfolio', {
+            context: this,
+            state: 'portfolio',
+            asArray: false
+        }
+        )
+
     }
 
     excluirProjeto(e) {
-
-        { alert("Projeto(s) excluído(s)") }
-        this.setState({ estaGravando: false })
-
-
+        var excluir = document.getElementsByName("projeto")
+        for(let i = 0; i < excluir.length; i++){
+            if(excluir[i].checked){
+                config.remove('portfolio/' + excluir[i].id)
+            }
+        }
+           
+        alert("Projeto(s) excluído(s)")         
         e.preventDefault()
     }
 
@@ -38,20 +51,21 @@ class excluirProjeto extends Component {
                 <h2> Excluir Projeto </h2>
                 <form onSubmit={this.excluirProjeto}>
 
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Projeto 1</label>
-                        <br />
-                        <input type="checkbox" className="custom-control-input" id="customCheck2" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Projeto 2</label>
-                        < br/>
-                        <input type="checkbox" className="custom-control-input" id="customCheck3" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Projeto 3</label>
-                        <br />
+                    <div className="custom-control custom-checkbox">
+                        {
+                            Object.keys(this.state.portfolio)
+                                .map(key => {
+                                    return (
+                                        <div >
+                                            <ItemExclusao key={key} id={key} conteudo={this.state.portfolio[key]} />
+                                        </div>
+                                    )
+                                })
+                        }
                     </div>
                     <button type="submit" className="btn btn-primary">Excluir Projetos</button>
                 </form>
-            </div>
+            </div >
 
         )
     }
